@@ -1,12 +1,15 @@
-public class Lesson02Part3{
-    public static void main(String args[]){
+public class Lesson02Part3
+{
+    public static void main(String args[])
+    {
         int a = 1;
         int b = 2;
 
-        System.out.println("Result: " + Calculate(a,b));
+        System.out.println("Result: " + сalculate(a,b));
     }
 
-    public static int Calculate(int x, int y){
+    public static int сalculate(int x, int y)
+    {
         int result = x * y;
         result += x;
         result += y;
