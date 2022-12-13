@@ -4,7 +4,7 @@ public class Lesson02Part2 {
         printMessage("I can do it!");
     }
 
-    public static void зrintMessage(String message)
+    public static void printMessage(String message)
     {
         System.out.println(message);
     }
