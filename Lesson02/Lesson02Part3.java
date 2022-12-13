@@ -1,5 +1,4 @@
-public class Lesson02Part3
-{
+public class Lesson02Part3 {
     public static void main(String args[])
     {
         int a = 1;
