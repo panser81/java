@@ -3,8 +3,7 @@ import java.io.IOException;
 import java.io.InputStreamReader;
 
 public class Lesson03Part3 {
-    public static void main(String args[]) throws IOException
-    {
+    public static void main(String args[]) throws IOException {
         System.out.println("Please input a numeric of season: ");
 
         BufferedReader reader = new BufferedReader(
@@ -32,8 +31,7 @@ public class Lesson03Part3 {
                     System.out.println("Please input a corect id. The correct value should be in range 1 .. 4");
                     break;
             }
-        }
-        catch (Exception ex){
+        } catch (Exception ex) {
             System.out.println("Please input a valid value for a season. The correct value should be in range 1 .. 4");
         }
     }

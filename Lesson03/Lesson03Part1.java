@@ -1,9 +1,9 @@
 import java.util.Arrays;
 
 public class Lesson03Part1 {
-    public static void main(String args[]){
-        int[] firstArray = {1,2,3,4};
-        int[] secondArray = {5,6,7,8};
+    public static void main(String args[]) {
+        int[] firstArray = {1, 2, 3, 4};
+        int[] secondArray = {5, 6, 7, 8};
 
         int firstArrayLength = firstArray.length;
         int secondArrayLength = secondArray.length;
