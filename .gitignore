@@ -11,6 +11,7 @@
 .idea/workspace.xml
 
 *.class
+*.iml
 
 # AWS User-specific
 .idea/**/aws.xml
