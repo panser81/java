@@ -20,15 +20,15 @@ public class CreditCard {
         return this.totalSum;
     }
 
-    public void AddMoney(float sum) {
+    public void addMoney(float sum) {
         this.totalSum += sum;
     }
 
-    public void TakeMoney(float sum) {
+    public void takeMoney(float sum) {
         this.totalSum -= sum;
     }
 
-    public void Print() {
+    public void print() {
         System.out.println("Account number: " + this.accountNumber);
         System.out.println("Balance: " + this.totalSum);
     }

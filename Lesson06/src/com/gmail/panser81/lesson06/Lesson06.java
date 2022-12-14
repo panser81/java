@@ -14,12 +14,12 @@ public class Lesson06 {
         creditCard03.setAccountNumber("000000003");
         creditCard03.setTotalSum(200);
 
-        creditCard01.AddMoney(10);
-        creditCard02.AddMoney(15);
-        creditCard03.TakeMoney(15);
+        creditCard01.addMoney(10);
+        creditCard02.addMoney(15);
+        creditCard03.takeMoney(15);
 
-        creditCard01.Print();
-        creditCard02.Print();
-        creditCard03.Print();
+        creditCard01.print();
+        creditCard02.print();
+        creditCard03.print();
     }
 }
