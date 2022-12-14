@@ -8,9 +8,9 @@ public class Lesson05Part3 {
         int secondPosition = mainStr.indexOf("?", firstPosition) + 1;
         int thirdPosition = mainStr.indexOf("?", secondPosition);
 
-        String result = mainStr.substring(0, secondPosition );
+        String result = mainStr.substring(0, secondPosition);
         String innerStr = mainStr.substring(secondPosition, thirdPosition).replace(" ", "");
-        result = result.concat(innerStr).concat(mainStr.substring(thirdPosition ));
+        result = result.concat(innerStr).concat(mainStr.substring(thirdPosition));
 
         System.out.println("Result string: " + result);
     }
