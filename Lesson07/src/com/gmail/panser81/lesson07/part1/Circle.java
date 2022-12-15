@@ -2,7 +2,7 @@ package com.gmail.panser81.lesson07.part1;
 
 public class Circle extends Figure {
     private double radius;
-    private static final double PI = 3.1415;
+    private static final double PI = Math.PI;
 
     public Circle(String name, double radius) {
         setName(name);
@@ -10,13 +10,12 @@ public class Circle extends Figure {
     }
 
     @Override
-    public void calculateSquare() {
-        double s = this.radius * this.radius * PI;
-        setSquare(s);
+    public double calculateSquare() {
+        return this.radius * this.radius * PI;
     }
 
     @Override
-    public void calculatePerimeter() {
-        setPerimeter(2 * this.radius * PI);
+    public double calculatePerimeter() {
+        return 2 * this.radius * PI;
     }
 }

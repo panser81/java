@@ -13,16 +13,16 @@ public class Triangle extends Figure {
     }
 
     @Override
-    public void calculateSquare() {
+    public double calculateSquare() {
         double p = (this.a + this.b + this.c) / 2;
 
         double s = Math.sqrt(p * (p - this.a) * (p - this.b) * (p - this.c));
 
-        setSquare(s);
+        return s;
     }
 
     @Override
-    public void calculatePerimeter() {
-        setPerimeter(this.a + this.b + this.c);
+    public double calculatePerimeter() {
+        return this.a + this.b + this.c;
     }
 }

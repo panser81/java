@@ -14,7 +14,7 @@ public class FigureExample {
         for (int i = 0; i < figures.length; i++) {
             figures[i].calculateSquare();
             figures[i].calculatePerimeter();
-            totalPerimeter += figures[i].getPerimeter();
+            totalPerimeter += figures[i].calculatePerimeter();
             figures[i].print();
         }
 

@@ -11,12 +11,12 @@ public class Rectangle extends Figure {
     }
 
     @Override
-    public void calculateSquare() {
-        setSquare(this.width * this.height);
+    public double calculateSquare() {
+        return this.width * this.height;
     }
 
     @Override
-    public void calculatePerimeter() {
-        setPerimeter(2 * this.width + 2 * this.height);
+    public double calculatePerimeter() {
+        return 2 * this.width + 2 * this.height;
     }
 }
