@@ -1,6 +1,7 @@
 package com.gmail.panser81.lesson13.part2;
 
 import com.sun.deploy.util.StringUtils;
+
 import java.io.BufferedWriter;
 import java.io.FileWriter;
 import java.io.IOException;
@@ -23,8 +24,7 @@ public class WriteExample {
             writer.write(str);
 
             writer.close();
-        }
-        catch (IOException e) {
+        } catch (IOException e) {
             System.out.println(e.getMessage());
         }
     }

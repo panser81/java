@@ -28,11 +28,11 @@ public class FileExample {
         String[] strArray = str.split(" ");
         List<String> strList = new ArrayList<>();
 
-        for(int i=0;i<strArray.length;i++)
+        for (int i = 0; i < strArray.length; i++)
             strList.add(strArray[i]);
 
         Predicate<String> condition = s -> s.length() >= 3 && s.length() <= 5;
-        strList.removeIf(condition);;
+        strList.removeIf(condition);
 
         String strNew = StringUtils.join(strList, " ");
 
@@ -44,8 +44,7 @@ public class FileExample {
             writer.write(strNew);
 
             writer.close();
-        }
-        catch (IOException e) {
+        } catch (IOException e) {
             System.out.println(e.getMessage());
         }
     }
