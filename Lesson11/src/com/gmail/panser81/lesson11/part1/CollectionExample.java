@@ -17,8 +17,9 @@ public class CollectionExample {
 
         Set<Integer> targetSet = new HashSet<>(list);
 
-        for (int s : targetSet)
+        for (int s : targetSet) {
             System.out.println(s + " - " + Collections.frequency(list, s));
+        }
     }
 
     private static int getRandomNumber(int minValue, int maxValue) {

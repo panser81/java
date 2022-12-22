@@ -28,7 +28,8 @@ public class PersonExample {
                 .sorted(ageComparator.thenComparing(firstNameComparator).thenComparing(lastNameComparator))
                 .collect(Collectors.toList());
 
-        for (Person p : sortedList)
+        for (Person p : sortedList) {
             System.out.println(p.getFirstName() + " " + p.getLastName() + " " + p.getAge());
+        }
     }
 }
