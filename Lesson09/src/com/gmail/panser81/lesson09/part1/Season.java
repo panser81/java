@@ -8,7 +8,6 @@ public enum Season {
 
     private final String description;
     private final int countOfDays;
-    private static final Season[] vals = values();
 
     Season(String description, int countOfDays) {
         this.description = description;
@@ -21,9 +20,5 @@ public enum Season {
 
     public int getCountOfDays() {
         return this.countOfDays;
-    }
-
-    public Season next() {
-        return vals[(this.ordinal() + 1) % vals.length];
     }
 }
