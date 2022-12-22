@@ -32,10 +32,11 @@ public class CollectionExample03 {
         list.add(new Person("Solomon", "Rogers", getRandomAge(min, max)));
 
         for (Person p : list) {
-            if (p.getAge() < 18)
+            if (p.getAge() < 18) {
                 System.out.println("Infant: " + getPersonDetail(p));
-            else
+            } else {
                 System.out.println("Adult: " + getPersonDetail(p));
+            }
         }
     }
 
