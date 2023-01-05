@@ -34,5 +34,6 @@ public class CollectionExample {
             }
             service.execute();
         }
+        scanner.close();
     }
 }

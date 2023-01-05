@@ -7,8 +7,9 @@ import java.util.stream.Collectors;
 
 public class FilterExecuteServiceImpl implements ExecuteService {
 
-    private int minValue = 15;
-    private int maxValue = 30;
+    private static final int MIN_VALUE = 15;
+    private static final int MAX_VALUE = 30;
+    private static final int AGE_OF_MAJORITY = 18;
 
     @Override
     public void execute() {
@@ -18,12 +19,12 @@ public class FilterExecuteServiceImpl implements ExecuteService {
         String[] personsLastName = new String[]{"Coleman", "Watson", "May", "Carrillo", "Santana", "Williams", "Rogers", "Garza", "Anderson", "Bonilla", "Kelley", "Rojas", "Frost", "Ayala", "Lowe", "Vaughn", "Frank", "Carney", "Tucker", "Best"};
 
         for (int i = 0; i < 20; i++) {
-            Person person = new Person(personsFirstName[i], personsLastName[i], getRandomAge(minValue, maxValue));
+            Person person = new Person(personsFirstName[i], personsLastName[i], getRandomAge(MIN_VALUE, MAX_VALUE));
             persons.add(person);
         }
 
-        List<Person> infants = persons.stream().filter(person -> person.getAge() < 18).collect(Collectors.toList());
-        List<Person> adults = persons.stream().filter(person -> person.getAge() >= 18).collect(Collectors.toList());
+        List<Person> infants = persons.stream().filter(person -> person.getAge() < AGE_OF_MAJORITY).collect(Collectors.toList());
+        List<Person> adults = persons.stream().filter(person -> person.getAge() >= AGE_OF_MAJORITY).collect(Collectors.toList());
 
         for (Person person : infants) {
             System.out.println("Infant: " + getPersonDetail(person));

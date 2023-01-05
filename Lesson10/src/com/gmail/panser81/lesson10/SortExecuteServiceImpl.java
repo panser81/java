@@ -4,8 +4,8 @@ import java.util.*;
 
 public class SortExecuteServiceImpl implements ExecuteService {
 
-    private int minValue = 2;
-    private int maxValue = 98;
+    private static final int MIN_VALUE = 2;
+    private static final int MAX_VALUE = 98;
 
     @Override
     public void execute() {
@@ -14,7 +14,7 @@ public class SortExecuteServiceImpl implements ExecuteService {
         Random rand = new Random();
 
         for (int i = 0; i < 10; i++) {
-            int randNumber = rand.nextInt((maxValue - minValue) + 1) + minValue;
+            int randNumber = rand.nextInt((MAX_VALUE - MIN_VALUE) + 1) + MIN_VALUE;
             list.add(randNumber);
         }
 
