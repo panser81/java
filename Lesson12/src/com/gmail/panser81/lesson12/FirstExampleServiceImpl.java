@@ -1,7 +1,8 @@
 package com.gmail.panser81.lesson12;
 
-public class Part1Example {
-    public static void main(String[] args) {
+public class FirstExampleServiceImpl implements ExampleService {
+    @Override
+    public void execute() {
         try {
             map(null);
         } catch (NullPointerException exception) {
