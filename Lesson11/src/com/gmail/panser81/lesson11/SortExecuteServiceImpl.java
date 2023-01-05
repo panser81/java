@@ -3,7 +3,6 @@ package com.gmail.panser81.lesson11;
 import java.util.ArrayList;
 import java.util.Comparator;
 import java.util.List;
-import java.util.Random;
 import java.util.stream.Collectors;
 
 public class SortExecuteServiceImpl implements ExecuteService {
@@ -19,7 +18,7 @@ public class SortExecuteServiceImpl implements ExecuteService {
         String[] personsLastName = new String[]{"Coleman", "Watson", "May", "Carrillo", "Santana", "Williams", "Rogers", "Garza", "Anderson", "Bonilla", "Kelley", "Rojas", "Frost", "Ayala", "Lowe", "Vaughn", "Frank", "Carney", "Tucker", "Best"};
 
         for (int i = 0; i < 10; i++) {
-            Person person = new Person(personsFirstName[i], personsLastName[i], getRandomAge(MIN_AGE, MAX_AGE));
+            Person person = new Person(personsFirstName[i], personsLastName[i], Helper.getRandomNumber(MIN_AGE, MAX_AGE));
             persons.add(person);
         }
 
@@ -34,10 +33,5 @@ public class SortExecuteServiceImpl implements ExecuteService {
         for (Person person : sortedList) {
             System.out.println(person.getFirstName() + " " + person.getLastName() + " " + person.getAge());
         }
-    }
-
-    private int getRandomAge(int minValue, int maxValue) {
-        Random rand = new Random();
-        return rand.nextInt((maxValue - minValue) + 1) + minValue;
     }
 }
