@@ -23,16 +23,16 @@ public class SortExecuteServiceImpl implements ExecuteService {
             persons.add(person);
         }
 
-        Comparator<Person> ageComparator = (p1, p2) -> p1.getAge() - p2.getAge();
-        Comparator<Person> firstNameComparator = (p1, p2) -> p1.getFirstName().compareTo(p2.getFirstName());
-        Comparator<Person> lastNameComparator = (p1, p2) -> p1.getLastName().compareTo(p2.getLastName());
+        Comparator<Person> ageComparator = (person1, person2) -> person1.getAge() - person2.getAge();
+        Comparator<Person> firstNameComparator = (person1, person2) -> person1.getFirstName().compareTo(person2.getFirstName());
+        Comparator<Person> lastNameComparator = (person1, person2) -> person1.getLastName().compareTo(person2.getLastName());
 
         List<Person> sortedList = persons.stream()
                 .sorted(ageComparator.thenComparing(firstNameComparator).thenComparing(lastNameComparator))
                 .collect(Collectors.toList());
 
-        for (Person p : sortedList) {
-            System.out.println(p.getFirstName() + " " + p.getLastName() + " " + p.getAge());
+        for (Person person : sortedList) {
+            System.out.println(person.getFirstName() + " " + person.getLastName() + " " + person.getAge());
         }
     }
 

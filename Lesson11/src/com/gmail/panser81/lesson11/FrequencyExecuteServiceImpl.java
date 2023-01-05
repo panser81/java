@@ -15,9 +15,9 @@ public class FrequencyExecuteServiceImpl implements ExecuteService {
             listOfNumbers.add(randomNumber);
         }
 
-        Set<Integer> targetSet = new HashSet<>(listOfNumbers);
+        Set<Integer> setOfNumbers = new HashSet<>(listOfNumbers);
 
-        for (int s : targetSet) {
+        for (int s : setOfNumbers) {
             System.out.println(s + " - " + Collections.frequency(listOfNumbers, s));
         }
     }
