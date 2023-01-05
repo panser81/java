@@ -1,4 +1,4 @@
-package com.gmail.panser81.lesson11.part3;
+package com.gmail.panser81.lesson11;
 
 public class Person {
     private String firstName;
