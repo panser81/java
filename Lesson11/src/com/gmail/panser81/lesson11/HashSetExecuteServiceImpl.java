@@ -8,16 +8,13 @@ public class HashSetExecuteServiceImpl implements ExecuteService {
     public void execute() {
         Map<String, String> customers = new HashMap<>();
 
-        customers.put("q1", "Joan Garza");
-        customers.put("q2", "Jeffrey Anderson");
-        customers.put("q3", "Teddy Bonilla");
-        customers.put("q4", "Habiba Kelley");
-        customers.put("q5", "Rafael Rojas");
-        customers.put("w1", "Connor Frost");
-        customers.put("w2", "Tara Ayala");
-        customers.put("w3", "Sabrina Lowe");
-        customers.put("w4", "Delores Vaughn");
-        customers.put("w5", "Sydney Frank");
+        String[] personsName = new String[]{"Joan Coleman", "Ella-Louise Watson", "Gideon Morgan", "Morgan Inaaya", "Solomon Bessie", "Markus Watson", "Solomon Jeffrey", "Bessie Habiba", "Jeffrey Connor", "Teddy Rafael"};
+
+        for (int i = 0; i < 5; i++) {
+            int keyPrefix = i + 1;
+            customers.put("q" + keyPrefix, personsName[i]);
+            customers.put("w" + keyPrefix, personsName[i + 5]);
+        }
 
         for (String key : customers.keySet()) {
             System.out.println(key);
