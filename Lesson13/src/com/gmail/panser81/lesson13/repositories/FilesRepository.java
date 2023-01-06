@@ -1,15 +1,9 @@
-package com.gmail.panser81.lesson13.helpers;
+package com.gmail.panser81.lesson13.repositories;
 
 import java.io.*;
-import java.util.Random;
 import java.util.Scanner;
 
-public class Helper {
-    private static Random random = new Random();
-
-    public static int getRandomNumber(int minValue, int maxValue) {
-        return random.nextInt((maxValue - minValue) + 1) + minValue;
-    }
+public class FilesRepository {
 
     public static void writeFile(String path, String content) throws Exception {
 

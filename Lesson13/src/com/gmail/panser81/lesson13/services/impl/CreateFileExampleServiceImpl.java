@@ -1,11 +1,11 @@
 package com.gmail.panser81.lesson13.services.impl;
 
-import com.gmail.panser81.lesson13.helpers.Helper;
 import com.gmail.panser81.lesson13.services.ExampleService;
 
 import java.io.BufferedWriter;
 import java.io.FileWriter;
 import java.util.Arrays;
+import java.util.Random;
 import java.util.stream.Collectors;
 
 public class CreateFileExampleServiceImpl implements ExampleService {
@@ -14,13 +14,14 @@ public class CreateFileExampleServiceImpl implements ExampleService {
     private static final int MAX_VALUE = 100;
     private static final int ARRAY_SIZE = 100;
     private static final String SEPARATOR = ",";
+    private static Random random = new Random();
 
     @Override
     public void execute() {
         Integer[] arrayOfNumbers = new Integer[ARRAY_SIZE];
 
         for (int i = 0; i < ARRAY_SIZE; i++) {
-            Integer number = Helper.getRandomNumber(MIN_VALUE, MAX_VALUE);
+            Integer number = getRandomNumber(MIN_VALUE, MAX_VALUE);
             arrayOfNumbers[i] = number;
         }
 
@@ -34,5 +35,9 @@ public class CreateFileExampleServiceImpl implements ExampleService {
         } catch (Exception exception) {
             System.out.println(exception.getMessage());
         }
+    }
+
+    public static int getRandomNumber(int minValue, int maxValue) {
+        return random.nextInt((maxValue - minValue) + 1) + minValue;
     }
 }
