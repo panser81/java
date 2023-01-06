@@ -1,32 +1,28 @@
-package com.gmail.panser81.lesson13;
+package com.gmail.panser81.lesson13.services.impl;
+
+import com.gmail.panser81.lesson13.helpers.Helper;
+import com.gmail.panser81.lesson13.services.ExampleService;
 
 import java.io.File;
-import java.io.FileNotFoundException;
 import java.util.ArrayList;
 import java.util.Collections;
 import java.util.List;
-import java.util.Scanner;
 
 import static java.lang.Integer.parseInt;
 
 public class ParseFileExampleServiceImpl implements ExampleService {
-    private static final String FILE_PATH = "c:\\repo\\test.txt";
+    private static final String FILE_PATH = "source_parse.txt";
 
     @Override
-    public void execute() {
-        String sourceString = "";
+    public void execute() throws Exception {
 
-        try {
-            File file = new File(FILE_PATH);
-            Scanner myReader = new Scanner(file);
-            while (myReader.hasNextLine()) {
-                String data = myReader.nextLine();
-                sourceString = sourceString.concat(data);
-            }
-            myReader.close();
-        } catch (FileNotFoundException exception) {
-            exception.printStackTrace();
+        File file = new File(FILE_PATH);
+
+        if (!file.exists()) {
+            Helper.writeFile(FILE_PATH, "1\t9\t10\t5\t18\t3\t7\t5");
         }
+
+        String sourceString = Helper.readFile(file);
 
         System.out.println(sourceString);
 
