@@ -1,11 +1,13 @@
-package com.gmail.panser81.lesson13.repositories;
+package com.gmail.panser81.lesson13.services.repositories;
+
+import com.gmail.panser81.lesson13.services.FileRepository;
 
 import java.io.*;
 import java.util.Scanner;
 
-public class FilesRepository {
+public class FileRepositoryImpl implements FileRepository {
 
-    public static void writeFile(String path, String content) throws Exception {
+    public void writeFile(String path, String content) throws Exception {
 
         try (BufferedWriter bufferedWriter = new BufferedWriter(new FileWriter(path))) {
 
@@ -22,7 +24,7 @@ public class FilesRepository {
         }
     }
 
-    public static String readFile(File file) throws Exception {
+    public String readFile(File file) throws Exception {
         StringBuilder sourceString = new StringBuilder();
 
         try (Scanner myReader = new Scanner(file)) {

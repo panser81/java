@@ -1,6 +1,7 @@
 package com.gmail.panser81.lesson13.services.impl;
 
-import com.gmail.panser81.lesson13.repositories.FilesRepository;
+import com.gmail.panser81.lesson13.services.FileRepository;
+import com.gmail.panser81.lesson13.services.repositories.FileRepositoryImpl;
 import com.gmail.panser81.lesson13.services.ExampleService;
 import com.sun.deploy.util.StringUtils;
 
@@ -15,7 +16,7 @@ public class ReadFileExampleServiceImpl implements ExampleService {
     private static final int RANGE_START = 3;
     private static final int RANGE_END = 5;
     private static final String SEPARATOR = " ";
-    private static FilesRepository filesRepository = new FilesRepository();
+    private static FileRepository fileRepository = new FileRepositoryImpl();
 
     @Override
     public void execute() throws Exception {
@@ -27,7 +28,7 @@ public class ReadFileExampleServiceImpl implements ExampleService {
         System.out.println(targetString);
 
         try {
-            filesRepository.writeFile(TARGET_FILE_PATH, targetString);
+            fileRepository.writeFile(TARGET_FILE_PATH, targetString);
         } catch (Exception e) {
             e.printStackTrace();
             System.out.println(e.getMessage());
@@ -39,10 +40,10 @@ public class ReadFileExampleServiceImpl implements ExampleService {
         File file = new File(path);
         if (!file.exists()) {
             String content = "nature to stress at time. I imagine stressful moment is joints coming to Dr Roberts added. The stressful moment is you're having of my attacks. It in I do is do to of my abilities.";
-            filesRepository.writeFile(path, content);
+            fileRepository.writeFile(path, content);
         }
 
-        String result = filesRepository.readFile(file);
+        String result = fileRepository.readFile(file);
         return result;
     }
 

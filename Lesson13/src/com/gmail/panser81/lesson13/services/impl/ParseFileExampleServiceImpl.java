@@ -1,7 +1,8 @@
 package com.gmail.panser81.lesson13.services.impl;
 
 
-import com.gmail.panser81.lesson13.repositories.FilesRepository;
+import com.gmail.panser81.lesson13.services.FileRepository;
+import com.gmail.panser81.lesson13.services.repositories.FileRepositoryImpl;
 import com.gmail.panser81.lesson13.services.ExampleService;
 
 import java.io.File;
@@ -13,7 +14,7 @@ import static java.lang.Integer.parseInt;
 
 public class ParseFileExampleServiceImpl implements ExampleService {
     private static final String FILE_PATH = "source_parse.txt";
-    private static FilesRepository filesRepository = new FilesRepository();
+    private static FileRepository fileRepository = new FileRepositoryImpl();
 
     @Override
     public void execute() throws Exception {
@@ -21,10 +22,10 @@ public class ParseFileExampleServiceImpl implements ExampleService {
         File file = new File(FILE_PATH);
 
         if (!file.exists()) {
-            filesRepository.writeFile(FILE_PATH, "1\t9\t10\t5\t18\t3\t7\t5");
+            fileRepository.writeFile(FILE_PATH, "1\t9\t10\t5\t18\t3\t7\t5");
         }
 
-        String sourceString = filesRepository.readFile(file);
+        String sourceString = fileRepository.readFile(file);
 
         System.out.println(sourceString);
 
