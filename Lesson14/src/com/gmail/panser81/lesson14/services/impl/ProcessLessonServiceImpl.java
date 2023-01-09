@@ -15,10 +15,10 @@ public class ProcessLessonServiceImpl implements LessonService {
 
     @Override
     public void execute() throws Exception {
-        String fileName = LessonConstants.DIRECTORY_NAME + "/" + LessonConstants.FILE_NAME;
+        String fileName = String.format("%s/%s", LessonConstants.DIRECTORY_NAME, LessonConstants.FILE_NAME);
         String productsStr = fileRepository.readFile(fileName);
 
-        List<Product> products = productsMapper.Map(productsStr);
+        List<Product> products = productsMapper.map(productsStr);
 
         Comparator<Product> minPriceComparator = Comparator.comparing(Product::getPrice);
 

@@ -5,5 +5,5 @@ import com.gmail.panser81.lesson14.models.Product;
 import java.util.List;
 
 public interface Mapper {
-    List<Product> Map(String productsStr);
+    List<Product> map(String productsString);
 }

@@ -19,7 +19,7 @@ public class CreateFileLessonServiceImpl implements LessonService {
         productsBuilder.append("Dell ODF-01;3459834;5000;10;DELL\n");
         productsBuilder.append("ASUS 5000;45600001;980;150;ASUS\n");
 
-        String filePath = LessonConstants.DIRECTORY_NAME + "/" + LessonConstants.FILE_NAME;
+        String filePath = String.format("%s/%s", LessonConstants.DIRECTORY_NAME, LessonConstants.FILE_NAME);
 
         fileRepository.createFile(filePath, productsBuilder.toString());
 

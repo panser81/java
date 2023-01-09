@@ -15,10 +15,10 @@ public class DeserializeLessonServiceImpl implements LessonService {
 
     @Override
     public void execute() throws Exception {
-        String fileName = LessonConstants.DIRECTORY_NAME + "/" + LessonConstants.FILE_NAME;
+        String fileName = String.format("%s/%s", LessonConstants.DIRECTORY_NAME, LessonConstants.FILE_NAME);
         String productsStr = fileRepository.readFile(fileName);
 
-        List<Product> products = productsMapper.Map(productsStr);
+        List<Product> products = productsMapper.map(productsStr);
 
         for (Product product : products) {
             product.print();

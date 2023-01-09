@@ -1,13 +1,15 @@
 package com.gmail.panser81.lesson14.models;
 
+import java.math.BigDecimal;
+
 public class Product {
     private String name;
     private String uniqueNumber;
-    private double price;
+    private BigDecimal price;
     private int count;
     private String production;
 
-    public Product(String name, String uniqueNumber, double price, int count, String production) {
+    public Product(String name, String uniqueNumber, BigDecimal price, int count, String production) {
         this.name = name;
         this.uniqueNumber = uniqueNumber;
         this.price = price;
@@ -15,7 +17,7 @@ public class Product {
         this.production = production;
     }
 
-    public double getPrice() {
+    public BigDecimal getPrice() {
         return this.price;
     }
 

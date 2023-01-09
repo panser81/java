@@ -3,15 +3,16 @@ package com.gmail.panser81.lesson14.services.impl;
 import com.gmail.panser81.lesson14.models.Product;
 import com.gmail.panser81.lesson14.services.Mapper;
 
+import java.math.BigDecimal;
 import java.util.ArrayList;
 import java.util.List;
 
 public class ProductMapperImpl implements Mapper {
 
     @Override
-    public List<Product> Map(String productsStr) {
+    public List<Product> map(String productsString) {
 
-        String[] productsLineArray = productsStr.split("\n");
+        String[] productsLineArray = productsString.split("\n");
 
         ArrayList<Product> products = new ArrayList<>();
 
@@ -20,7 +21,7 @@ public class ProductMapperImpl implements Mapper {
 
             String name = productStr[0];
             String uniqueName = productStr[1];
-            double price = Double.parseDouble(productStr[2]);
+            BigDecimal price = new BigDecimal(productStr[2]);
             int count = Integer.parseInt(productStr[3]);
             String production = productStr[4];
 
